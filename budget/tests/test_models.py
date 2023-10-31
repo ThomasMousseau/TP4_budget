@@ -37,7 +37,7 @@ class TestModels(TestCase):
 
 		)
 
-		self.assertEquals(self.project1.budget_left, 9884) #7000
+		self.assertEquals(self.project1.budget_left, 7000) 
 		#self.assertEquals(self.project1.budget_left, 8000)
 
 		
