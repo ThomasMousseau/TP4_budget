@@ -12,4 +12,6 @@ jobs:
       - name: Install packages
         run: pip install -r requirements.txt
       - name : Run tests
-        run: python myscript.py
+        run: |
+          set -x
+          python myscript.py
