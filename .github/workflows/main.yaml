@@ -15,3 +15,5 @@ jobs:
         run: |
           set -x
           python myscript.py
+          git bisect run python manage.py test
+          git bisect reset 2>&1
