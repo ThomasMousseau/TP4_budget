@@ -5,7 +5,11 @@ bad_hash = subprocess.check_output(["git", "rev-parse", "HEAD"]).decode("ascii")
 good_hash = 'bfdccab909c32635457d41eeb6e7fed322026170'
 
 os.system(f'git bisect start {bad_hash} {good_hash} 2>&1')
-os.system('git bisect run python manage.py test 2>&1')
-os.system('git bisect reset 2>&1')
+#os.system('git bisect run python manage.py test 2>&1')
 
+result = subprocess.run(f'git bisect run python manage.py test', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+print(result.stdout)
+print(result.stderr)
+
+os.system('git bisect reset 2>&1')
 
