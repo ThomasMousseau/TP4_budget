@@ -8,3 +8,5 @@ os.system(f'git bisect start {bad_hash} {good_hash}')
 os.system('git bisect run python manage.py test')
 os.system('git bisect reset')
 
+print('This is the final commit that broke the code:' + str(bad_hash))
+
